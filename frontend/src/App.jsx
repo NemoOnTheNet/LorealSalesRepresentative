@@ -1,12 +1,8 @@
-import Counter from "./components/Counter";
-import logo from "./assets/logo.svg";
-
-import "./App.css";
+import "./App.scss";
 
 function App() {
   console.log("je suis la");
-  return (
-  );
+  return;
 }
 
 export default App;
