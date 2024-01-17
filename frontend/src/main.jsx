@@ -5,9 +5,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import Homepage from "./pages/Homepage/Homepage.jsx";
-import Histo from "./pages/Histo/Histo.jsx";
+import Historique from "./pages/Historique/Historique.jsx"
 import Plv from "./pages/PLV/Plv.jsx";
-import Sales from "./pages/Sales/Sales.jsx";
+import Cart from "./pages/Cart/Cart.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/histo",
-        element: <Histo />,
+        element: <Historique />,
       },
       {
         path: "/plv",
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/sales",
-        element: <Sales />,
+        element: <Cart />,
       },
     ],
   },
