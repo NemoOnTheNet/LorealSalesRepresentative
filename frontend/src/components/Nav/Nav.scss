@@ -1,1 +1,32 @@
 @import "../../Variables.scss";
+
+.nav{
+    background-color: $purple;
+    height: 3.5em;
+    display: flex;
+    width: 80%;
+    border-radius: 10px;
+    align-self: center;
+    align-items: center;
+    justify-content: space-evenly;
+
+    position: absolute;
+    bottom: 1px;
+}
+
+.nav__link{
+    list-style: none;
+    all: unset;
+    height: 5em;
+    width: 5em;
+    background-color: $lightBlue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
+.nav__link__img{
+    height: 70%;
+}

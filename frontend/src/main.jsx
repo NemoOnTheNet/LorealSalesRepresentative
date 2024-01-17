@@ -22,11 +22,11 @@ const router = createBrowserRouter([
         element: <Histo />,
       },
       {
-        path: "/Plv",
+        path: "/plv",
         element: <Plv />,
       },
       {
-        path: "/Sales",
+        path: "/sales",
         element: <Sales />,
       },
     ],
