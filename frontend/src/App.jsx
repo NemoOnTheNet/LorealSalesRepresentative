@@ -1,12 +1,8 @@
-import Counter from "./components/Counter";
-import logo from "./assets/logo.svg";
+import { Outlet } from "react-router-dom";
 
-import "./App.css";
 
 function App() {
-  console.log("je suis la");
-  return (
-  );
+  return <Outlet />;
 }
 
 export default App;
