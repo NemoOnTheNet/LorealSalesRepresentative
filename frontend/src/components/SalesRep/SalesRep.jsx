@@ -1,6 +1,5 @@
 function SalesRep() {
-    return (
-     );
+    return ( );
 }
 
 export default SalesRep;
