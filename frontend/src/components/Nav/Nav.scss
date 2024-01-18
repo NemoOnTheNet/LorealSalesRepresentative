@@ -33,15 +33,15 @@
 
 @media screen and (min-width: 500px) {
   .nav {
-    height: 98vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: end;
+    height: auto;
+    width: auto;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
     background: none;
   }
 
-  .nav__link{
+  .nav__link {
     height: 6em;
     width: 6em;
   }
