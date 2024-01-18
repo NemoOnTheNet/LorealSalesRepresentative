@@ -5,14 +5,14 @@ import "./Questions.scss";
 function Question({ questionId }) {
   const { questions } = useGlobalContext();
 
-  const targetQuestion = questions.find((question) => question.id === questionId);
-
   return (
-    <div className="bubble">
-      {targetQuestion && (
-        <p className="bubble__text" key={targetQuestion.id}>{targetQuestion.text}</p>
-      )}
-    </div>
+    <>
+      <div className="bubble">
+        <p className="bubble__text" key={questions[questionId].id}>
+          {questions[questionId].text}
+        </p>
+      </div>
+    </>
   );
 }
 
