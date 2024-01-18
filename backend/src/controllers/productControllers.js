@@ -79,12 +79,15 @@ const gender = async (req, res, next) => {
 
 const productsType = async (req, res, next) => {
   try {
-    // J’ai besoin des meilleures ventes d'une ville pour les hommes
+// J’ai besoin d’une liste des types de produits disponibles dans une ville donnée.
     const result = await tables.product.productsType(req.body.city);
+    console.log(req.body.city);
     if (result == null) {
+      console.log("if", result);
       res.sendStatus(404);
     } else {
       res.json(result);
+      console.log("else", result)
     }
   } catch (err) {
     next(err);
