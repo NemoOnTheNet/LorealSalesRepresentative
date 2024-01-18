@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import { useGlobalContext } from "../Context/GlobalContextProvider";
 import "./Answers.scss";
 
-function Answers({ numQuestion }) {
+function Answers({ numQuestion, setTest }) {
 
   const paysList = [
     { name: "France" },
@@ -63,11 +63,17 @@ function Answers({ numQuestion }) {
 
   const cityRef = useRef();
 
-  const { setChooseCity } = useGlobalContext();
-
+  const { chooseCity, setChooseCity } = useGlobalContext();
+  
   const handleSubmit = (e) => {
     setChooseCity(e.target.value);
   };
+  
+  const plop = () => {
+    setTest(1)
+  }
+  
+  console.log("🚀 ~ Answers ~ chooseCity:", chooseCity)
 
   return (
     <>
@@ -192,7 +198,7 @@ function Answers({ numQuestion }) {
         )}
       </form>
       {numQuestion === 3 ? (
-        <button type="button" > <Link to={"/catalog"}> je souhaiterais mon catalogue </Link></button>
+        <button type="button" onClick={plop} >  je souhaiterais mon catalogue </button>
       ) : (
         ""
       )}
