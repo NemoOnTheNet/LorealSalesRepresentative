@@ -3,7 +3,7 @@ import "./Historique.scss";
 
 function Historique() {
   const salon = 30;
-  const city = "Bristol";
+  const city = "Lille";
   const [result, setResult] = useState();
   const [bestsellers, setBestsellers] = useState();
   useEffect(() => {

@@ -1,18 +1,34 @@
 import { useEffect, useState } from "react";
 import "./Catalog.scss";
 
-function Catalog() {
-    const city = "Lille";
-    const [result, setResult] = useState();
-    useEffect(() => {
-        fetch(`${import.meta.env.VITE_BACKEND_URL}/api/city/${city}`)
-          .then((response) => response.json())
-          .then((data) => setResult(data))
-          .catch((error) => console.error(error));
-      }, []);
-      console.log(result);
+function Catalog({ chooseCity }) {
+  const city = "Lille";
+  const [result, setResult] = useState();
+  console.log("🚀 ~ Catalog ~ chooseCity:", chooseCity);
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/city/${chooseCity}`)
+      .then((response) => response.json())
+      .then((data) => setResult(data))
+      .catch((error) => console.error(error));
+  }, []);
+  console.log(result);
 
-    return <h1>{result[1].name}</h1>;
+  return (
+    <>
+      {result
+        ? result.map((product) => (
+            <div className="productCard">
+              <img src={product.picture} alt={product.name} />
+              <h2>{product.name}</h2>
+              <p>
+                {product.product_type} {product.brand} {product.price}
+              </p>
+            </div>
+          ))
+        : "Loading"}
+    </>
+  );
 }
 
 export default Catalog;
+
