@@ -10,10 +10,12 @@
 }
 
 .answers__list {
-  display: flex;
-  margin: 3%;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    width: 90%;
+    margin: 3%;
+    margin-top: 10rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
