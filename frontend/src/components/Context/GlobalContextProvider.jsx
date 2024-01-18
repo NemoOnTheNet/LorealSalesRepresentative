@@ -21,10 +21,25 @@ function GlobalContextProvider({ children }) {
       text: "Pouvez-vous nous en dire plus sur vos clients?"
     }
   ];
+  const productTest = [
+    {
+      id: 1,
+      name: "perfume"
+    },
+    {
+      id: 2,
+      name: "nail polish"
+    },
+    {
+      id: 3,
+      name: "shampoo"
+    },
+  ]
 
   const contextValue = useMemo(() => {
     return {
       questions,
+      productTest
     };
   }, [questions]);
 

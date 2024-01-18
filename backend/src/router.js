@@ -8,13 +8,10 @@ const router = express.Router();
 
 // Import productControllers module for handling product-related operations
 const productControllers = require("./controllers/productControllers");
-
 // Route to get a list of all products
 router.get("/products", productControllers.browse);
-
 // Route to get a specific product by ID
 router.get("/products/:id", productControllers.read);
-
 // J’ai besoin d’une route qui me donne tous les produits pour un pays donné, rangés par meilleures ventes
 router.get("/country", productControllers.country);
 // J’ai besoin d’une route qui me donne tous les produits d’une ville donnée, rangé par meilleures ventes
