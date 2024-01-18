@@ -1,22 +1,23 @@
 @import "../../Variables.scss";
 
-
-.bubble{
-    background: $lightBlue;
-    color:#fff; 
-    padding:7px 15px; 
-    border-radius:3px; 
-    width:65%;}
-
-.bubble:after{
-    content:""; 
-    border-left:20px solid transparent;
-    border-right:20px solid transparent;
-    border-top: 20px solid $lightBlue;
-    position: absolute;
+.bubble {
+  background: #fff;
+  color: $grey;
+  padding: 7px 15px;
+  border-radius: 3px;
+  width: 80%;
 }
 
-.bubble__text{
-    text-align: center;
-    font-size: 1.5rem;
+.bubble:after {
+  content: "";
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #fff;
+  position: absolute;
+}
+
+.bubble__text {
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem;
 }

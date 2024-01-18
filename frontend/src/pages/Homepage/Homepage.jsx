@@ -5,7 +5,7 @@ import Answers from "../../components/Answers/Answers";
 function Homepage() {
   return (
     <main className="homepage__main">
-      <Questions />
+      <Questions questionId={1}/>
       <Answers />
     </main>
   );
