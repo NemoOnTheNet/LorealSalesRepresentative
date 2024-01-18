@@ -11,7 +11,6 @@ function Homepage() {
   return (
     <main className="homepage__main">
       <Questions questionId={numQuestion}/>
-      <Questions numQuestion={numQuestion} />
       <Answers numQuestion={numQuestion} setNumQuestion={setNumQuestion} />
       <button type="buttn" onClick={handleClick}>
         Enregistrer
