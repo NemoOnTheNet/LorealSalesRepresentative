@@ -1,11 +1,13 @@
+import "./Homepage.scss";
+import Questions from "../../components/Questions/Questions";
 import Answers from "../../components/Answers/Answers";
 
 function Homepage() {
   return (
-    <>
-      <h1>je suis sur Homepage</h1>
+    <main className="homepage__main">
+      <Questions />
       <Answers />
-    </>
+    </main>
   );
 }
 

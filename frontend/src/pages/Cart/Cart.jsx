@@ -1,7 +1,7 @@
-function Sales() {
-    return ( 
-        <h1>Je suis sur sale</h1>
-     );
+import "./Cart.scss";
+
+function Cart() {
+  return <h1>Je suis sur Cart</h1>;
 }
 
-export default Sales;
+export default Cart;

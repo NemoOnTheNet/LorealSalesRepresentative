@@ -1,1 +1,11 @@
 @import "../../Variables.scss";
+
+.questions {
+    display: flex;
+    width: 60vw;
+    border: 5px solid $grey;
+    margin-top: 5%;
+    border-radius: 20px;
+    height: 20vh;
+    background-color: aliceblue;
+}
