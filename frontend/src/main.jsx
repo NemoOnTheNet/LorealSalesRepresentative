@@ -2,32 +2,36 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import App from "./App";
-import Homepage from "./pages/Homepage/Homepage.jsx";
-import Histo from "./pages/Histo/Histo.jsx";
-import Plv from "./pages/PLV/Plv.jsx";
-import Sales from "./pages/Sales/Sales.jsx";
+import Homepage from "./pages/Homepage/Homepage";
+import Historique from "./pages/Historique/Historique";
+import Plv from "./pages/PLV/Plv";
+import Cart from "./pages/Cart/Cart";
+import Login from "./pages/Login/Login";
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />
+  },
   {
     element: <App />,
     children: [
       {
-        path: "/",
-        element: <Homepage />,
+        path: "/homepage",
+        element: <Homepage />
       },
       {
-        path: "/histo",
-        element: <Histo />,
+        path: "/historique",
+        element: <Historique />
       },
       {
-        path: "/Plv",
-        element: <Plv />,
+        path: "/plv",
+        element: <Plv />
       },
       {
-        path: "/Sales",
-        element: <Sales />,
+        path: "/cart",
+        element: <Cart />
       },
     ],
   },
