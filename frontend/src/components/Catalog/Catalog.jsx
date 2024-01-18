@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { useGlobalContext } from "../Context/GlobalContextProvider";
 import "./Catalog.scss";
 
 function Catalog() {
-    const city = "Lille";
+  const { chooseCity } = useGlobalContext();
+    const city = chooseCity;
     const [result, setResult] = useState();
+
     useEffect(() => {
         fetch(`${import.meta.env.VITE_BACKEND_URL}/api/city/${city}`)
           .then((response) => response.json())
