@@ -10,7 +10,6 @@ function Catalog() {
           .then((data) => setResult(data))
           .catch((error) => console.error(error));
       }, []);
-
       console.log(result);
 
     return <h1>{result[1].name}</h1>;
