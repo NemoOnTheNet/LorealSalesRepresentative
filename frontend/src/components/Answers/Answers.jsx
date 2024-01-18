@@ -1,8 +1,8 @@
+import { useRef } from "react";
+import { useGlobalContext } from "../Context/GlobalContextProvider";
 import "./Answers.scss";
 
 function Answers({ numQuestion }) {
-  console.log(numQuestion);
-
   const paysList = [
     { name: "France" },
     { name: "Belgique" },
@@ -57,8 +57,12 @@ function Answers({ numQuestion }) {
     { tranche: "40 - 50 ans" },
   ];
 
-  const handleSubmit = () => {
-    console.log("aller sur la page du catalogue");
+  const cityRef = useRef();
+
+  const { setChooseCity, chooseCity } = useGlobalContext();
+
+  const handleSubmit = (e) => {
+    setChooseCity(e.target.value);
   };
 
   return (
@@ -68,7 +72,7 @@ function Answers({ numQuestion }) {
           <section className="paysForms">
             {paysList.map((pays) => (
               <>
-                <label htmlFor={pays.name} className="label">
+                <label htmlFor={pays.name} key={pays.name} className="label">
                   <input
                     name="pays"
                     value={pays.name}
@@ -90,13 +94,19 @@ function Answers({ numQuestion }) {
           <section className="section_town">
             {townList.map((town) => (
               <>
-                <label htmlFor={town.name} className="label_town">
+                <label
+                  htmlFor={town.name}
+                  key={town.name}
+                  className="label_town"
+                >
                   <input
+                    ref={cityRef}
                     name="town"
                     value={town.name}
                     id={town.name}
                     type="radio"
                     key={town.name}
+                    onChange={handleSubmit}
                   />
                   {town.name}
                 </label>
@@ -111,7 +121,7 @@ function Answers({ numQuestion }) {
           <section className="section_type">
             {typeList.map((type, index) => (
               <>
-                <label htmlFor={type.name}>
+                <label htmlFor={type.name} key={index}>
                   <input
                     name="type"
                     value={type.name}
@@ -129,11 +139,15 @@ function Answers({ numQuestion }) {
         )}
         {numQuestion === 3 ? (
           <section className="section_client_type">
-            <fieldset className="genre" >
+            <fieldset className="genre">
               <legend>Genre</legend>
               {clientGenderList.map((genre, index) => (
                 <>
-                  <label htmlFor={genre.genre} className="label_client">
+                  <label
+                    htmlFor={genre.genre}
+                    key={index}
+                    className="label_client"
+                  >
                     <input
                       name="genre"
                       value={genre.genre}
@@ -150,7 +164,11 @@ function Answers({ numQuestion }) {
               <legend>Ages</legend>
               {clientAgeListe.map((age, index) => (
                 <>
-                  <label htmlFor={age.tranche} className="label_client">
+                  <label
+                    htmlFor={age.tranche}
+                    key={index}
+                    className="label_client"
+                  >
                     <input
                       name="age"
                       value={age.tranche}
@@ -169,9 +187,7 @@ function Answers({ numQuestion }) {
         )}
       </form>
       {numQuestion === 3 ? (
-        <button type="submit" onSubmit={handleSubmit}>
-          je souhaiterais mon catalogue
-        </button>
+        <button type="button">je souhaiterais mon catalogue</button>
       ) : (
         ""
       )}
