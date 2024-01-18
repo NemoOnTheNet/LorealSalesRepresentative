@@ -1,8 +1,10 @@
 import { useRef } from "react";
+import {Link} from "react-router-dom"
 import { useGlobalContext } from "../Context/GlobalContextProvider";
 import "./Answers.scss";
 
 function Answers({ numQuestion }) {
+
   const paysList = [
     { name: "France" },
     { name: "Belgique" },
@@ -10,6 +12,8 @@ function Answers({ numQuestion }) {
     { name: "Allemagne" },
     { name: "Iatlie" },
   ];
+
+
 
   const townList = [
     { name: "Antwerp" },
@@ -59,7 +63,7 @@ function Answers({ numQuestion }) {
 
   const cityRef = useRef();
 
-  const { setChooseCity, chooseCity } = useGlobalContext();
+  const { setChooseCity } = useGlobalContext();
 
   const handleSubmit = (e) => {
     setChooseCity(e.target.value);
@@ -81,6 +85,7 @@ function Answers({ numQuestion }) {
                     key={pays.name}
                     className="answers__product"
                   />
+                  
                   {pays.name}
                 </label>
               </>
@@ -187,7 +192,7 @@ function Answers({ numQuestion }) {
         )}
       </form>
       {numQuestion === 3 ? (
-        <button type="button">je souhaiterais mon catalogue</button>
+        <button type="button" > <Link to={"/catalog"}> je souhaiterais mon catalogue </Link></button>
       ) : (
         ""
       )}
