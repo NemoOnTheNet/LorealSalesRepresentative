@@ -1,0 +1,22 @@
+@import "../../Variables.scss";
+
+
+.bubble{
+    background: $lightBlue;
+    color:#fff; 
+    padding:7px 15px; 
+    border-radius:3px; 
+    width:65%;}
+
+.bubble:after{
+    content:""; 
+    border-left:20px solid transparent;
+    border-right:20px solid transparent;
+    border-top: 20px solid $lightBlue;
+    position: absolute;
+}
+
+.bubble__text{
+    text-align: center;
+    font-size: 1.5rem;
+}

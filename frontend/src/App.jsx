@@ -1,11 +1,10 @@
-import Counter from "./components/Counter";
-import logo from "./assets/logo.svg";
-
-import "./App.css";
+import React from "react";
+import Question from "./components/Questions/Questions";
+import "./App.scss"
 
 function App() {
-  console.log("je suis la");
   return (
+      <Question questionId={1} />
   );
 }
 
