@@ -67,15 +67,17 @@ function Answers({ numQuestion }) {
         {numQuestion === 0
           ? paysList.map((pays) => (
               <>
-                <label htmlFor={pays.name}> {pays.name}</label>
-                <input
-                  name="pays"
-                  value={pays.name}
-                  id={pays.name}
-                  type="radio"
-                  key={pays.name}
-                  className="answers__product"
-                />
+                <label htmlFor={pays.name}>
+                  <input
+                    name="pays"
+                    value={pays.name}
+                    id={pays.name}
+                    type="radio"
+                    key={pays.name}
+                    className="answers__product"
+                  />
+                  {pays.name}
+                </label>
               </>
             ))
           : ""}
