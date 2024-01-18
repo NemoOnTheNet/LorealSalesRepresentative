@@ -7,7 +7,7 @@ function Login() {
     <main className="login__main">
       <SalesRep />
       <main className="login__content">
-        <img src="./src/assets/logo.png" />
+        <img className="login__image" src="./src/assets/logo.png" />
         <form className="login__form">
           <label htmlFor="email" className="login__identify">
             Numéro de client

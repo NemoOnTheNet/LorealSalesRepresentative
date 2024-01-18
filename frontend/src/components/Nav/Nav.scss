@@ -4,14 +4,13 @@
   background-color: $purple;
   height: 3.5em;
   display: flex;
-  width: 80%;
+  width: 15%;
   border-radius: 10px;
   align-self: center;
   align-items: center;
   justify-content: space-evenly;
-
   position: absolute;
-  bottom: 1px;
+  
 }
 
 .nav__link {
@@ -41,7 +40,7 @@
     background: none;
   }
 
-  .nav__link{
+  .nav__link {
     height: 6em;
     width: 6em;
   }

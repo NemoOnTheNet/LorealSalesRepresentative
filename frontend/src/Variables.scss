@@ -4,7 +4,8 @@ $purple: #3c2d70;
 $blue: #043dac;
 $lightBlue: #5294fe;
 $aqua: #35dece;
-
+$black:rgba(#000000, 0.8);
+$white: white;
 @mixin buttons {
     background-color: $grey;
     color: white;
