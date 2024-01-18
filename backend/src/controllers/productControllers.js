@@ -37,7 +37,7 @@ const read = async (req, res, next) => {
 const country = async (req, res, next) => {
   try {
     // J’ai besoin d’une route qui me donne tous les produits pour un pays donné, rangés par meilleures ventes
-    const result = await tables.product.country(req.body.country);
+    const result = await tables.product.country(req.params.country);
     if (result == null) {
       res.sendStatus(404);
     } else {
@@ -52,7 +52,7 @@ const country = async (req, res, next) => {
 const city = async (req, res, next) => {
   try {
     // J’ai besoin d’une route qui me donne tous les produits pour un pays donné, rangés par meilleures ventes
-    const result = await tables.product.city(req.body.city);
+    const result = await tables.product.city(req.params.city);
     if (result == null) {
       res.sendStatus(404);
     } else {
@@ -66,7 +66,7 @@ const city = async (req, res, next) => {
 const gender = async (req, res, next) => {
   try {
     // J’ai besoin des meilleures ventes d'une ville pour les hommes
-    const result = await tables.product.gender(req.body.gender, req.body.city);
+    const result = await tables.product.gender(req.params.gender, req.params.city);
     if (result == null) {
       res.sendStatus(404);
     } else {
@@ -79,12 +79,15 @@ const gender = async (req, res, next) => {
 
 const productsType = async (req, res, next) => {
   try {
-    // J’ai besoin des meilleures ventes d'une ville pour les hommes
-    const result = await tables.product.productsType(req.body.city);
+// J’ai besoin d’une liste des types de produits disponibles dans une ville donnée.
+    const result = await tables.product.productsType(req.params.city);
+    console.log(req.body.city);
     if (result == null) {
+      console.log("if", result);
       res.sendStatus(404);
     } else {
       res.json(result);
+      console.log("else", result)
     }
   } catch (err) {
     next(err);
@@ -94,7 +97,7 @@ const productsType = async (req, res, next) => {
 const historique = async (req, res, next) => {
   try {
     // J’ai besoin des meilleures ventes d'une ville pour les hommes
-    const result = await tables.product.historique(req.body.salon);
+    const result = await tables.product.historique(req.params.salon);
     if (result == null) {
       res.sendStatus(404);
     } else {

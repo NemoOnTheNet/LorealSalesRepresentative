@@ -1,14 +1,14 @@
+import { useRef } from "react";
+import { useGlobalContext } from "../Context/GlobalContextProvider";
 import "./Answers.scss";
 
 function Answers({ numQuestion }) {
-  console.log(numQuestion);
-
   const paysList = [
     { name: "France" },
     { name: "Belgique" },
-    { name: "Suisse" },
     { name: "United Kingdom" },
-    { name: "Luxambourg" },
+    { name: "Allemagne" },
+    { name: "Iatlie" },
   ];
 
   const townList = [
@@ -57,17 +57,22 @@ function Answers({ numQuestion }) {
     { tranche: "40 - 50 ans" },
   ];
 
-  const handleSubmit = () => {
-    console.log("aller sur la page du catalogue");
+  const cityRef = useRef();
+
+  const { setChooseCity, chooseCity } = useGlobalContext();
+
+  const handleSubmit = (e) => {
+    setChooseCity(e.target.value);
   };
 
   return (
-    <form id="answersForm">
-      <section className="paysForms">
-        {numQuestion === 0
-          ? paysList.map((pays) => (
+    <>
+      <form id="answersForm">
+        {numQuestion === 0 ? (
+          <section className="paysForms">
+            {paysList.map((pays) => (
               <>
-                <label htmlFor={pays.name}>
+                <label htmlFor={pays.name} key={pays.name} className="label">
                   <input
                     name="pays"
                     value={pays.name}
@@ -79,89 +84,114 @@ function Answers({ numQuestion }) {
                   {pays.name}
                 </label>
               </>
-            ))
-          : ""}
-      </section>
-      <section className="">
-        {numQuestion === 1
-          ? townList.map((town) => (
+            ))}
+          </section>
+        ) : (
+          ""
+        )}
+
+        {numQuestion === 1 ? (
+          <section className="section_town">
+            {townList.map((town) => (
               <>
-                <label htmlFor={town.name}> {town.name}</label>
-                <input
-                  name="town"
-                  value={town.name}
-                  id={town.name}
-                  type="radio"
+                <label
+                  htmlFor={town.name}
                   key={town.name}
-                />
+                  className="label_town"
+                >
+                  <input
+                    ref={cityRef}
+                    name="town"
+                    value={town.name}
+                    id={town.name}
+                    type="radio"
+                    key={town.name}
+                    onChange={handleSubmit}
+                  />
+                  {town.name}
+                </label>
               </>
-            ))
-          : ""}
-      </section>
-      {numQuestion === 2
-        ? typeList.map((type, index) => (
-            <>
-              <label htmlFor={type.name}> {type.name}</label>
-              <input
-                name="type"
-                value={type.name}
-                id={type.name}
-                type="radio"
-                key={type.name}
-              />
-            </>
-          ))
-        : ""}
-      {numQuestion === 3
-        ? clientGenderList.map((genre, index) => (
-            <>
-              <label htmlFor={genre.genre}> {genre.genre}</label>
-              <input
-                name="genre"
-                value={genre.genre}
-                id={genre.genre}
-                type="radio"
-                key={genre.genre}
-              />
-            </>
-          ))
-        : ""}
-      {numQuestion === 3
-        ? clientAgeListe.map((age, index) => (
-            <>
-              <label htmlFor={age.tranche}> {age.tranche}</label>
-              <input
-                name="age"
-                value={age.tranche}
-                id={age.tranche}
-                type="radio"
-                key={age.tranche}
-              />
-            </>
-          ))
-        : ""}
+            ))}
+          </section>
+        ) : (
+          ""
+        )}
+
+        {numQuestion === 2 ? (
+          <section className="section_type">
+            {typeList.map((type, index) => (
+              <>
+                <label htmlFor={type.name} key={index}>
+                  <input
+                    name="type"
+                    value={type.name}
+                    id={type.name}
+                    type="radio"
+                    key={type.name}
+                  />
+                  {type.name}
+                </label>
+              </>
+            ))}
+          </section>
+        ) : (
+          ""
+        )}
+        {numQuestion === 3 ? (
+          <section className="section_client_type">
+            <fieldset className="genre">
+              <legend>Genre</legend>
+              {clientGenderList.map((genre, index) => (
+                <>
+                  <label
+                    htmlFor={genre.genre}
+                    key={index}
+                    className="label_client"
+                  >
+                    <input
+                      name="genre"
+                      value={genre.genre}
+                      id={genre.genre}
+                      type="radio"
+                      key={genre.genre}
+                    />
+                    {genre.genre}
+                  </label>
+                </>
+              ))}
+            </fieldset>
+            <fieldset className="age">
+              <legend>Ages</legend>
+              {clientAgeListe.map((age, index) => (
+                <>
+                  <label
+                    htmlFor={age.tranche}
+                    key={index}
+                    className="label_client"
+                  >
+                    <input
+                      name="age"
+                      value={age.tranche}
+                      id={age.tranche}
+                      type="radio"
+                      key={age.tranche}
+                    />
+                    {age.tranche}
+                  </label>
+                </>
+              ))}
+            </fieldset>
+          </section>
+        ) : (
+          ""
+        )}
+      </form>
       {numQuestion === 3 ? (
-        <button type="submit" onSubmit={handleSubmit}>
-          je souhaiterais mon catalogue
-        </button>
+        <button type="button">je souhaiterais mon catalogue</button>
       ) : (
         ""
       )}
-    </form>
-    /*
-<ul className="answers__list">
-        {productList
-          ? productList.map((product) => (
-              <li className="answers__product">
-                <h2>{product.name}</h2>
-                <p>{product.price}</p>
-                <img src={product.img} />
-              </li>
-            ))
-          : "Loading"}
-      </ul>
-      */
-
+    </>
     // map de cartes pour les réponses avec une image et un texte qui trigger la question suivante
     // sortir les infos du contexte
   );
