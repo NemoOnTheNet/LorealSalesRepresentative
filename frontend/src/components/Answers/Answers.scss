@@ -1,19 +1,32 @@
 @import "../../Variables.scss";
 
-.answers__product {
-    display: flex;
-    flex-direction: column-reverse;
- border: 1px solid $grey;
- background-color: $lightBlue;
- align-items: center;
- width: 30%;
+.answers__list {
+  display: flex;
+  width: 90%;
+  margin: 3%;
+  margin-top: 10rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.answers__list {
-    display: flex;
-    margin: 3%;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+#answersForm {
+  height: 45%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
+}
+
+.paysForms {
+  height: 100%;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  font-size: 1.5em;
 }
