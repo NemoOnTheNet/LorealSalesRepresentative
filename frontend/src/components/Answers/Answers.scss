@@ -1,21 +1,32 @@
 @import "../../Variables.scss";
 
 .answers__product {
-    display: flex;
-    flex-direction: column-reverse;
- border: 1px solid $grey;
- background-color: $lightBlue;
- align-items: center;
- width: 30%;
+  display: flex;
+  flex-direction: column-reverse;
+  border: 1px solid $grey;
+  background-color: $lightBlue;
+  align-items: center;
+  width: 30%;
 }
 
 .answers__list {
-    display: flex;
-    width: 90%;
-    margin: 3%;
-    margin-top: 10rem;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  width: 90%;
+  margin: 3%;
+  margin-top: 10rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.answersForms {
+  height: 100%;
+  width: 100%;
+}
+
+.paysForms {
+  height: 100%;
+  width: 100%;
+  display: flex;
 }
