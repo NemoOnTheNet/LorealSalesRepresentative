@@ -22,7 +22,7 @@ router.get("/city", productControllers.city);
 // Les meilleures ventes de la ville pour les hommes et une pour les meilleures ventes dans la ville pour femmes.
 router.get("/city/gender", productControllers.gender);
 // J’ai besoin d’une liste des types de produits disponibles dans la ville donnée.
-router.get("/products/type", productControllers.productsType);
+router.get("/type", productControllers.productsType);
 // J’ai besoin d’une liste des commandes faites par un magasin du plus récent au plus ancien.
 router.get("/historique", productControllers.historique);
 
