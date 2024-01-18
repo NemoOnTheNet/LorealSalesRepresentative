@@ -1,0 +1,19 @@
+@import "../../Variables.scss";
+
+.answers__product {
+    display: flex;
+    flex-direction: column-reverse;
+ border: 1px solid $grey;
+ background-color: $lightBlue;
+ align-items: center;
+ width: 30%;
+}
+
+.answers__list {
+    display: flex;
+    margin: 3%;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

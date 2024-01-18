@@ -3,19 +3,39 @@ import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { GlobalContextProvider } from "./components/Context/GlobalContextProvider";
-
 import App from "./App";
-import Questions from "./components/Questions/Questions";
+import Homepage from "./pages/Homepage/Homepage";
+import Historique from "./pages/Historique/Historique";
+import Plv from "./pages/PLV/Plv";
+import Cart from "./pages/Cart/Cart";
+import Login from "./pages/Login/Login";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Login />,
   },
   {
-    path: "/Questions",
-    element: <Questions />
-  }
+    element: <App />,
+    children: [
+      {
+        path: "/homepage",
+        element: <Homepage />,
+      },
+      {
+        path: "/historique",
+        element: <Historique />,
+      },
+      {
+        path: "/plv",
+        element: <Plv />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+    ],
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

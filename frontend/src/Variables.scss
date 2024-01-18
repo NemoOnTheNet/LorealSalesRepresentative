@@ -1,5 +1,15 @@
+// variables de la charte graphique L'Oréal
 $grey: #344257;
-$purple: #3C2D70;
-$blue: #043DAC;
-$lightBlue: #5294FE;
-$aqua: #35DECE;
+$purple: #3c2d70;
+$blue: #043dac;
+$lightBlue: #5294fe;
+$aqua: #35dece;
+
+@mixin buttons {
+    background-color: $grey;
+    color: white;
+    text-align: center;
+    padding: 3%;
+    border-radius: 50px;
+    font-weight: bold;
+  }
