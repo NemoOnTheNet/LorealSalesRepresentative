@@ -1,32 +1,52 @@
 @import "../../Variables.scss";
 
-.nav{
-    background-color: $purple;
-    height: 3.5em;
-    display: flex;
-    width: 80%;
-    border-radius: 10px;
-    align-self: center;
-    align-items: center;
-    justify-content: space-evenly;
+.nav {
+  background-color: $purple;
+  height: 3.5em;
+  display: flex;
+  width: 80%;
+  border-radius: 10px;
+  align-self: center;
+  align-items: center;
+  justify-content: space-evenly;
 
+  position: absolute;
+  bottom: 1px;
+}
+
+.nav__link {
+  list-style: none;
+  all: unset;
+  height: 5em;
+  width: 5em;
+  background-color: $lightBlue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+.nav__link__img {
+  height: 70%;
+}
+
+@media screen and (min-width: 500px) {
+  .nav {
+    height: auto;
+    width: auto;
     position: absolute;
-    bottom: 1px;
-}
+    bottom: 5px;
+    right: 5px;
+    background: none;
+  }
 
-.nav__link{
-    list-style: none;
-    all: unset;
-    height: 5em;
-    width: 5em;
-    background-color: $lightBlue;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 10px;
-}
+  .nav__link {
+    height: 6em;
+    width: 6em;
+  }
 
-.nav__link__img{
-    height: 70%;
+  .hidden {
+    display: none;
+  }
 }

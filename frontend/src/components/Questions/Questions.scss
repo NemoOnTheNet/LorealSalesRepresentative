@@ -1,11 +1,30 @@
 @import "../../Variables.scss";
 
-.questions {
-    display: flex;
-    width: 60vw;
-    border: 5px solid $grey;
-    margin-top: 5%;
-    border-radius: 20px;
-    height: 20vh;
-    background-color: aliceblue;
+.bubble {
+  background: #fff;
+  color: $grey;
+  padding: 7px 15px;
+  border-radius: 15px;
+  width: 80%;
+  box-shadow: 5px 5px 15px 5px $grey;
+}
+
+.bubble:after {
+  content: "";
+  // border-left: 20px solid transparent;
+  // border-right: 20px solid transparent;
+  // border-top: 20px solid #fff;
+  border-top: 13px solid transparent;
+      border-right: 26px solid #fff;
+      border-bottom: 13px solid transparent;
+  position: absolute;
+  left: 40.2%;
+  top: 12%;
+}
+
+.bubble__text {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem;
 }
