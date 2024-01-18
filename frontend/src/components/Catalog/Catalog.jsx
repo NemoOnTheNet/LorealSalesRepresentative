@@ -31,3 +31,4 @@ function Catalog({ chooseCity }) {
 }
 
 export default Catalog;
+
