@@ -14,7 +14,7 @@ function Homepage() {
       <Questions questionId={numQuestion} />
       <Answers numQuestion={numQuestion} />
       {numQuestion < 3 ? (
-        <button type="buttn" onClick={handleClick}>
+        <button type="button" onClick={handleClick}>
           Enregistrer
         </button>
       ) : " "}

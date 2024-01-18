@@ -17,7 +17,9 @@
   display: flex;
   justify-content: center;
   align-self: center;
-
+  border-radius: 10px;
+  border: 5px solid black;
+  background-color: rgba($color: #ffff, $alpha: 0.7);
 }
 
 .paysForms {
@@ -29,4 +31,45 @@
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   font-size: 1.5em;
+}
+
+.label{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: wrap-reverse;
+}
+
+.section_town{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.section_type{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.section_client_type{
+  display: flex;
+  width: 90%;
+  height: 70%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.genre{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 75%;
+  width: 45%;
+}
+.age{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 75%;
+  width: 45%;
 }
