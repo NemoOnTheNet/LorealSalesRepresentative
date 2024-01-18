@@ -8,13 +8,16 @@ function Homepage() {
   const handleClick = () => {
     setNumQuestion(numQuestion + 1);
   };
+
   return (
     <main className="homepage__main">
-      <Questions questionId={numQuestion}/>
-      <Answers numQuestion={numQuestion} setNumQuestion={setNumQuestion} />
-      <button type="buttn" onClick={handleClick}>
-        Enregistrer
-      </button>
+      <Questions questionId={numQuestion} />
+      <Answers numQuestion={numQuestion} />
+      {numQuestion < 3 ? (
+        <button type="buttn" onClick={handleClick}>
+          Enregistrer
+        </button>
+      ) : " "}
     </main>
   );
 }

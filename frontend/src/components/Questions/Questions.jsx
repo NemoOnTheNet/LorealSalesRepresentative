@@ -2,22 +2,15 @@ import React from "react";
 import { useGlobalContext } from "../Context/GlobalContextProvider";
 import "./Questions.scss";
 
-function Question({ numQuestion }) {
+function Question({ questionId }) {
   const { questions } = useGlobalContext();
-
-  const targetQuestion = questions.find(
-    (question) => question.id === questionId
-  );
 
   return (
     <>
-      <h1 className="questions">{questions[numQuestion].text}</h1>;
       <div className="bubble">
-        {targetQuestion && (
-          <p className="bubble__text" key={targetQuestion.id}>
-            {targetQuestion.text}
-          </p>
-        )}
+        <p className="bubble__text" key={questions[questionId].id}>
+          {questions[questionId].text}
+        </p>
       </div>
     </>
   );
