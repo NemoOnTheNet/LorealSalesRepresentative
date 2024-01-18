@@ -6,7 +6,7 @@ TRUNCATE b2c_client;
 
 
 INSERT INTO product (product_type, brand, name, price, picture) VALUES
-    ('skincare', 'Yves Saint Laurent', 'Shiny Locks Shampoo', '19.99', 'src/assets/image/shampooing-loreal.png'),
+  ('skincare', 'Yves Saint Laurent', 'Shiny Locks Shampoo', '19.99', 'src/assets/image/shampooing-loreal.png'),
   ('perfume', 'Valentino', 'Youthful', '29.99', 'src/assets/image/parfum-ralph-lauren-romance-eau-de-parfum.png'),
   ('perfume', 'Mugler', 'Eau de Parfum', '49.99', 'src/assets/image/parfum-ralph-lauren-romance-eau-de-parfum.png'),
   ('make up', 'Lancôme', 'Luminous Foundation', '39.99', 'src/assets/image/fond teint transparent-loreal.png'),
@@ -40,7 +40,7 @@ INSERT INTO product (product_type, brand, name, price, picture) VALUES
 ('make up', 'Valentino', 'Firming Eye Cream', '31.99', 'src/assets/image/creme-yeux-loreal.png'),
 ('perfume', 'Khiels', 'Ocean Breeze Cologne', '46.99', 'src/assets/image/deo-homme-loreal.png'),
 ('skincare', 'Biotherm', 'Waterproof Mascara', '19.99', 'src/assets/image/mascara-loreal.png'),
-('skincare', 'Yves Saint Laurent', 'Defining Lotion', '16.99', 'src/assets/image/lotion-visage-loreal.png'),
+('skincare', 'Yves Saint Laurent', 'Defining Lotion', '16.99', 'src/assets/image/mask.png'),
 ('perfume', 'Mugler', 'Radiance-Boosting Serum', '38.99', 'src/assets/image/serum-eclat-loreal.png'),
 ('perfume', 'Valentino', 'Mystical Garden Perfume', '52.99', 'src/assets/image/parfum-ralph-lauren-romance-eau-de-parfum.png'),
 ('make up', 'Lancôme', 'Creamy Lip Gloss', '24.99', 'src/assets/image/gloss-levres-loreal.png'),
@@ -134,7 +134,7 @@ INSERT INTO product (product_type, brand, name, price, picture) VALUES
 ('make up', 'Valentino', 'Firming Eye Cream', '31.99', 'src/assets/image/eye-cream-valentino.png'),
 ('perfume', 'Khiels', 'Ocean Breeze Cologne', '46.99', 'src/assets/image/cologne-khiels.png'),
 ('skincare', 'Biotherm', 'Waterproof Mascara', '19.99', 'src/assets/image/mascara-biotherm.png'),
-('skincare', 'Yves Saint Laurent', 'Defining Lotion', '16.99', 'src/assets/image/skincare-yves-saint-laurent.png'),
+('skincare', 'Yves Saint Laurent', 'Defining Lotion', '16.99', 'src/assets/image/mask.png'),
 ('perfume', 'Mugler', 'Radiance-Boosting Serum', '38.99', 'src/assets/image/serum-mugler.png'),
 ('perfume', 'Valentino', 'Mystical Garden Perfume', '52.99', 'src/assets/image/perfume-valentino.png'),
 ('make up', 'Lancôme', 'Creamy Lip Gloss', '24.99', 'src/assets/image/lip-gloss-lancome.png'),
