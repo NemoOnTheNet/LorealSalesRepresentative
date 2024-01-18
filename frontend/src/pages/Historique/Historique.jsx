@@ -1,52 +1,24 @@
+import { useEffect, useState } from "react";
 import "./Historique.scss";
 
 function Historique() {
-  const productList = [
-    {
-      name: "hair",
-      date: "01/01/1111",
-      img: "address",
-    },    {
-        name: "hair",
-        date: "01/01/1111",
-        img: "address",
-      },    {
-        name: "hair",
-        date: "01/01/1111",
-        img: "address",
-      },    {
-        name: "hair",
-        date: "01/01/1111",
-        img: "address",
-      },    {
-        name: "hair",
-        date: "01/01/1111",
-        img: "address",
-      },    {
-        name: "hair",
-        date: "01/01/1111",
-        img: "address",
-      },    {
-        name: "hair",
-        date: "01/01/1111",
-        img: "address",
-      },
-  ];
-
-  const bestsellers = [
-    {
-      name: "hair",
-      img: "address",
-    },
-    {
-      name: "hair",
-      img: "address",
-    },
-    {
-      name: "hair",
-      img: "address",
-    },
-  ];
+  const salon = 30;
+  const city = "Bristol";
+  const [result, setResult] = useState();
+  const [bestsellers, setBestsellers] = useState();
+  useEffect(() => {
+      fetch(`${import.meta.env.VITE_BACKEND_URL}/api/historique/${salon}`)
+        .then((response) => response.json())
+        .then((data) => setResult(data))
+        .catch((error) => console.error(error));
+    }, []);
+    useEffect(() => {
+      fetch(`${import.meta.env.VITE_BACKEND_URL}/api/city/${city}`)
+        .then((response) => response.json())
+        .then((data) => setBestsellers(data))
+        .catch((error) => console.error(error));
+    }, []);
+    console.log(result, bestsellers);
 
   return (
     <main className="historique__main">
@@ -60,21 +32,20 @@ function Historique() {
         </label>
       </form>
       <ul>
-        {productList
-          ? productList.map((product) => (
-              <li className="historique__product">
-                {product.name}.....{product.date}....
-                <img src={product.img} />
+        {result
+          ? result.map((product) => (
+              <li className="historique__product">{product.Order_id} - 
+                {product.product_name}.....{product.date}
               </li>
           ))
           : "Loading"}
       </ul>
           </div>
       <section className="historique__bestsellers">
-      {bestsellers ? bestsellers.map((bestseller) => (
+      {bestsellers ? bestsellers.slice(0, 3).map((bestseller) => (
           <article>
           <h2>{bestseller.name}</h2>
-          <img src={bestseller.img} />
+          <img src={bestseller.picture} />
         </article>
       )) : "Loading"}
       </section>
