@@ -1,13 +1,12 @@
-import "./App.scss";
 import { Outlet } from "react-router-dom";
-import Nav from "./components/Nav/Nav";
-import "./App.scss"
+import "./App.scss";
+import SalesRep from "./components/SalesRep/SalesRep";
 
 function App() {
   return (
-    <main className="main">
+    <main className="app__main">
+      <SalesRep />
       <Outlet />
-      <Nav />
     </main>
   );
 }

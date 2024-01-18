@@ -1,1 +1,9 @@
 @import "../../Variables.scss";
+
+.salesrep {
+    width: 35vw;
+    height: 100vh;
+    background-color: $grey;
+    border-radius: 0 300px 300px 0;
+    border: 5px solid;
+}
