@@ -6,7 +6,7 @@ We were glad to work for as big a name as L'Oréal for our second hackathon in t
 
 ### Concept
 
-...
+A virtual sales representative so the small businesses gets the same perks as the big names.
 
 ### What it looks like
 
