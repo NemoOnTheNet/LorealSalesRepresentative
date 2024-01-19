@@ -1,19 +1,16 @@
 import { useRef } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context/GlobalContextProvider";
 import "./Answers.scss";
 
 function Answers({ numQuestion, setTest }) {
-
   const paysList = [
     { name: "France" },
     { name: "Belgique" },
     { name: "United Kingdom" },
     { name: "Allemagne" },
-    { name: "Iatlie" },
+    { name: "Italie" },
   ];
-
-
 
   const townList = [
     { name: "Antwerp" },
@@ -53,27 +50,25 @@ function Answers({ numQuestion, setTest }) {
     { name: "Indépendant" },
   ];
 
-  const clientGenderList = [{ genre: "Femme" }, { genre: "Homme" }];
+  const clientGenderList = [{ genre: " " }];
 
   const clientAgeListe = [
-    { tranche: "20 - 29 ans" },
-    { tranche: "30 - 40 ans" },
-    { tranche: "40 - 50 ans" },
+    { tranche: " " },
   ];
 
   const cityRef = useRef();
 
   const { chooseCity, setChooseCity } = useGlobalContext();
-  
+
   const handleSubmit = (e) => {
     setChooseCity(e.target.value);
   };
-  
+
   const plop = () => {
-    setTest(1)
-  }
-  
-  console.log("🚀 ~ Answers ~ chooseCity:", chooseCity)
+    setTest(1);
+  };
+
+  console.log("🚀 ~ Answers ~ chooseCity:", chooseCity);
 
   return (
     <>
@@ -91,7 +86,7 @@ function Answers({ numQuestion, setTest }) {
                     key={pays.name}
                     className="answers__product"
                   />
-                  
+
                   {pays.name}
                 </label>
               </>
@@ -163,7 +158,7 @@ function Answers({ numQuestion, setTest }) {
                       name="genre"
                       value={genre.genre}
                       id={genre.genre}
-                      type="radio"
+                      type="range"
                       key={genre.genre}
                     />
                     {genre.genre}
@@ -184,7 +179,7 @@ function Answers({ numQuestion, setTest }) {
                       name="age"
                       value={age.tranche}
                       id={age.tranche}
-                      type="radio"
+                      type="range"
                       key={age.tranche}
                     />
                     {age.tranche}
@@ -198,13 +193,15 @@ function Answers({ numQuestion, setTest }) {
         )}
       </form>
       {numQuestion === 3 ? (
-        <button type="button" onClick={plop} >  je souhaiterais mon catalogue </button>
+        <button type="button" onClick={plop}>
+          {" "}
+          Votre catalogue personnalisé{" "}
+        </button>
       ) : (
         ""
       )}
     </>
-    // map de cartes pour les réponses avec une image et un texte qui trigger la question suivante
-    // sortir les infos du contexte
+
   );
 }
 

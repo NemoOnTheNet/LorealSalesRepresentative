@@ -1,7 +1,7 @@
 @import "../../Variables.scss";
 
 .nav {
-  background-color: $purple;
+  background-color: white;
   height: 3.5em;
   display: flex;
   width: 80%;
@@ -12,6 +12,8 @@
 
   position: absolute;
   bottom: 1px;
+  display: flex;
+  gap: 30px;
 }
 
 .nav__link {
@@ -19,12 +21,13 @@
   all: unset;
   height: 5em;
   width: 5em;
-  background-color: $lightBlue;
+  background-color: white;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 10px;
+  gap: 30px;
 }
 
 .nav__link__img {

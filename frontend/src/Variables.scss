@@ -2,7 +2,7 @@
 $grey: #344257;
 $purple: #3c2d70;
 $blue: #043dac;
-$lightBlue: #5294fe;
+$lightBlue: black;
 $aqua: #35dece;
 
 @mixin buttons {
@@ -12,4 +12,13 @@ $aqua: #35dece;
     padding: 3%;
     border-radius: 50px;
     font-weight: bold;
+font-size: large;
+    padding-inline: 10%;
+    border: 0.5px solid  rgba(0, 0, 0, 0.7) ;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.9);
+    transition: box-shadow 0.5s ease; 
+   
+    &:hover {
+      box-shadow: 0 10px 10px $grey;
+    }
   }

@@ -4,13 +4,13 @@ import "./Nav.scss";
 function Nav() {
   return (
     <nav className="nav">
-      <Link className="nav__link hidden" to="/historique">
+      <Link className="nav__link " to="/historique">
         <img
           src="src/assets/icons8-horloge-50.png"
           alt="Horloge signifiant l'historique"
         />
       </Link>
-      <Link className="nav__link hidden" to="/plv">
+      <Link className="nav__link " to="/plv">
         <img src="src/assets/icons8-carnet-50.png" alt="liste des PLV" />
       </Link>
       <Link className="nav__link" to="/cart">

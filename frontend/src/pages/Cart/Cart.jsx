@@ -6,9 +6,9 @@ function Cart() {
   const [cart, setCart] = useState([]);
 
   const products = [
-    { id: 1, name: 'Product 1', price: 20 },
-    { id: 2, name: 'Product 2', price: 30 },
-    { id: 3, name: 'Product 3', price: 25 },
+    { id: 1, name: 'Eau de parfum', price: 25 },
+    { id: 2, name: 'Eau de parfum', price: 32 },
+    { id: 3, name: 'Eau de parfum', price: 45 },
   ];
 
   const addToCart = (product) => {
@@ -25,8 +25,9 @@ function Cart() {
   };
 
   return (
+    <>
     <div className="cartContainer">
-      <h1 className="cartTitle">Catalogue</h1>
+      <h1 className="cartTitle">Votre sélection</h1>
       
       <div>
         <h2 className="availableProduct">Produits disponibles</h2>
@@ -34,7 +35,7 @@ function Cart() {
           {products.map(product => (
             <li className="product" key={product.id}>
               {product.name} - {product.price}€
-              <button className="actionButton" onClick={() => addToCart(product)}>Add to Cart</button>
+              <button className="actionButton" onClick={() => addToCart(product)}>Ajouter</button>
             </li>
           ))}
         </ul>
@@ -46,13 +47,14 @@ function Cart() {
           {cart.map(item => (
             <li className="chosenProduct" key={item.id}>
               {item.name} - {item.price}€{' '}
-              <button className="actionButton" onClick={() => removeFromCart(item.id)}>Remove from Cart</button>
+              <button className="actionButton" onClick={() => removeFromCart(item.id)}>Enlever du panier</button>
             </li>
           ))}
         </ul>
         <p className="total">Total: {calculateTotal()}€</p>
       </div>
     </div>
+          </>
   );
 }
 
