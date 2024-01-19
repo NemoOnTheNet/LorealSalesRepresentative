@@ -52,9 +52,7 @@ function Answers({ numQuestion, setTest }) {
 
   const clientGenderList = [{ genre: " " }];
 
-  const clientAgeListe = [
-    { tranche: " " },
-  ];
+  const clientAgeListe = [{ tranche: " " }];
 
   const cityRef = useRef();
 
@@ -147,45 +145,19 @@ function Answers({ numQuestion, setTest }) {
           <section className="section_client_type">
             <fieldset className="genre">
               <legend>Genre</legend>
-              {clientGenderList.map((genre, index) => (
-                <>
-                  <label
-                    htmlFor={genre.genre}
-                    key={index}
-                    className="label_client"
-                  >
-                    <input
-                      name="genre"
-                      value={genre.genre}
-                      id={genre.genre}
-                      type="range"
-                      key={genre.genre}
-                    />
-                    {genre.genre}
-                  </label>
-                </>
-              ))}
+
+              <label htmlFor="genre" lassName="label_client" />
+              <p>homme</p>
+              <input type="range" id="genre" name="genre" min="0" max="10" />
+              <p>femme</p>
             </fieldset>
             <fieldset className="age">
               <legend>Ages</legend>
-              {clientAgeListe.map((age, index) => (
-                <>
-                  <label
-                    htmlFor={age.tranche}
-                    key={index}
-                    className="label_client"
-                  >
-                    <input
-                      name="age"
-                      value={age.tranche}
-                      id={age.tranche}
-                      type="range"
-                      key={age.tranche}
-                    />
-                    {age.tranche}
-                  </label>
-                </>
-              ))}
+
+              <label htmlFor="age" className="label_client" />
+              <p>20 ans</p>
+              <input name="age" id="age" type="range" min="0" max="10" />
+              <p>99 ans</p>
             </fieldset>
           </section>
         ) : (
@@ -201,7 +173,6 @@ function Answers({ numQuestion, setTest }) {
         ""
       )}
     </>
-
   );
 }
 
