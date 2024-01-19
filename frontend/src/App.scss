@@ -5,7 +5,13 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    color: $grey;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#root {
+    color: white;
+    background-color: black;
+overflow: hidden;
 }
 
 a {
@@ -17,4 +23,12 @@ a {
     background-image: url("/src/assets/assetAvatarAndBackground/pharmacy.png");
     background-size: cover;
     background-position: center;
+}
+
+button {
+    @include buttons;
+}
+
+input {
+    margin-inline: 3%;
 }

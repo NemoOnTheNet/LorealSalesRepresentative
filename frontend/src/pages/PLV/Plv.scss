@@ -1,1 +1,17 @@
 @import "../../Variables.scss";
+
+.plv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 70vw;
+    gap: 20%;
+    &h1{
+
+    }
+    & li{
+
+        list-style: inside;
+    }
+}

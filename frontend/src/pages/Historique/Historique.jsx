@@ -39,13 +39,67 @@ function Historique() {
               </li>
           ))
           : "Loading"}
+          <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>          <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+        <li className="historique__product">20 - 
+          Eau de parfum.................................................02/02/2022
+        </li>
+
       </ul>
           </div>
       <section className="historique__bestsellers">
       {bestsellers ? bestsellers.slice(0, 3).map((bestseller) => (
-          <article>
+          <article className="historique__best">
           <h2>{bestseller.name}</h2>
-          <img src={bestseller.picture} />
+          <img className="historique__best--img" src={bestseller.picture} />
         </article>
       )) : "Loading"}
       </section>
